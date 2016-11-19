@@ -1,5 +1,5 @@
 from django.contrib import admin
-from offers.models import Offer
+from offers.models import Offer, Request, Answer
 # Register your models here.
 #
 #
@@ -14,3 +14,5 @@ class OfferAdmin(admin.ModelAdmin):
     # list_filter = ['article_date']
 #
 admin.site.register(Offer)
+admin.site.register(Answer)
+admin.site.register(Request)

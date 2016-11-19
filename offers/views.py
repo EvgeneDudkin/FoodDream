@@ -1,40 +1,31 @@
-# from django.shortcuts import render, redirect
-# from django.http.response import HttpResponse, Http404
-# from django.template.context_processors import csrf
-# from django.template.loader import get_template
-# from django.template import Context
-# from django.shortcuts import render_to_response
-# from django.core.paginator import Paginator
+from django.shortcuts import render, redirect
+from django.http.response import HttpResponse, Http404
+from django.template.context_processors import csrf
+from django.template.loader import get_template
+from django.template import Context
+from django.shortcuts import render_to_response
+from django.core.paginator import Paginator
 #
 # from article.forms import CommentForm
-# from article.models import Article, Comments
+from offers.models import *
 # from django.core.exceptions import ObjectDoesNotExist
 # from django.contrib import auth
 #
 #
-# def basic_one(request):
-#     view = "basic_one"
-#     html = "<html><header></header><body>Это %s вьюха</body></html>" % view
-#     return HttpResponse(html)
-#
-#
-# def template_two(request):
-#     view = "template_two"
-#     t = get_template("myview.html")
-#     html = t.render(Context({'name': view}))
-#     return HttpResponse(html)
-#
-#
-# def template_three_simple(request):
-#     view = "template_three"
-#     return render_to_response('myview.html', {'name': view})
-#
-#
-# def articles(request, page_number=1):
-#     all_articles = Article.objects.all()
-#     current_page = Paginator(all_articles, 2)
-#     return render_to_response('articles.html', {'articles': current_page.page(page_number),
-#                                                 'username': auth.get_user(request).username})
+def basic_one(request):
+    view = "basic_one"
+    html = "<html><header></header><body>Это %s вьюха</body></html>" % view
+    return HttpResponse(html)
+
+
+def offers(request):
+    all_offers = Offer.objects.all()
+    # current_page = Paginator(all_articles, 2)
+    return render_to_response('offers.html', {
+        # 'offers': all_offers.page(page_number),
+        # 'username': auth.get_user(request).username
+        'offers': all_offers
+    })
 #
 #
 # def article(request, article_id=1):

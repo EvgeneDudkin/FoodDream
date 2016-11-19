@@ -13,6 +13,20 @@ class Offer(models.Model):
     offer_radius = models.IntegerField()
     offer_rate = models.FloatField()
 
+
+class Answer(models.Model):
+    class Meta:
+        db_table = "answer"
+    answer_title = models.CharField(max_length=200)
+    answer_status = models.CharField(max_length=20)
+
+
+class Request(models.Model):
+    class Meta:
+        db_table = "request"
+    request_title = models.CharField(max_length=200)
+    request_requester = models.CharField(max_length=20)
+    request_status = models.CharField(max_length=20)
 #
 # class Comments(models.Model):
 #     class Meta:
