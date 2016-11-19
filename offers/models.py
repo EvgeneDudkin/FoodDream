@@ -9,7 +9,9 @@ class Offer(models.Model):
         db_table = "offer"
     offer_title = models.CharField(max_length=200)
     offer_address = models.TextField()
-    article_date = models.DateTimeField()
+    offer_date = models.DateTimeField()
+    offer_radius = models.IntegerField()
+    offer_rate = models.FloatField()
 
 #
 # class Comments(models.Model):
