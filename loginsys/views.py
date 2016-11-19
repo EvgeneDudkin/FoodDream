@@ -26,17 +26,17 @@ def logout(request):
     return redirect('/')
 
 
-# def register(request):
-#     args = {}
-#     args.update(csrf(request))
-#     args['form'] = UserCreationForm
-#     if request.POST:
-#         newuser_form = UserCreationForm(request.POST)
-#         if newuser_form.is_valid():
-#             newuser_form.save()
-#             newuser = auth.authenticate(username=newuser_form.cleaned_data['username'],
-#                                         password=newuser_form.cleaned_data['password2'])
-#             return redirect('/')
-#         else:
-#             args['form'] = newuser_form
-#     return render_to_response('register.html', args)
+def register(request):
+    args = {}
+    args.update(csrf(request))
+    args['form'] = UserCreationForm
+    if request.POST:
+        newuser_form = UserCreationForm(request.POST)
+        if newuser_form.is_valid():
+            newuser_form.save()
+            newuser = auth.authenticate(username=newuser_form.cleaned_data['username'],
+                                        password=newuser_form.cleaned_data['password2'])
+            return redirect('/')
+        else:
+            args['form'] = newuser_form
+    return render_to_response('register.html', args)

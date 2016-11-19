@@ -130,3 +130,5 @@ STATICFILES_DIRS = (
     'static',
     os.path.join(BASE_DIR, 'static')
 )
+
+AUTH_USER_MODEL = 'offers.User'
