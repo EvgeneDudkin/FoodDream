@@ -11,7 +11,7 @@
 {#        <h4>Рейтинг: {{ my_offer.off }}</h4>#}
 {#        <h4>Радиус: {{ my_offer.off}}</h4>#}
 {#        <button class="button">Отменить предложение</button>#}
-        <form action="/deloffer/" method="post">
+         <form action="/deloffer/{{ my_offer.id }}/" method="post">
             {% csrf_token %}
             <input type="submit" class="button" value="Отменить предложение">
         </form>

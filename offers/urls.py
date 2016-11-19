@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from django.contrib import admin
-from offers.views import basic_one, offers, answers, requests, my_offers, addoffer, deloffer
+from offers.views import basic_one, offers, answers, requests, my_offers, addoffer, deloffer, \
+    needoffer, approveoffer
 urlpatterns = [
     url(r'^1/', basic_one),
     url(r'^offers/$', offers),
@@ -9,6 +10,8 @@ urlpatterns = [
     url(r'^my_offers/$', my_offers),
     url(r'^addoffer/$', addoffer),
     url(r'^deloffer/(?P<offer_id>\d+)/$', deloffer),
+    url(r'^needoffer/(?P<offer_id>\d+)/$', needoffer),
+    url(r'^approveoffer/(?P<offer_id>\d+)/$', approveoffer),
     url(r'^', offers),
     # url(r'^offers/get/(?P<article_id>\d+)/$', offers),
     # url(r'^articles/addlike/(?P<article_id>\d+)/$', addlike),

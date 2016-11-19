@@ -3,11 +3,14 @@
 {% block requests %}
 <div class="large-8 columns">
     {% for request in requests %}
-        <h4>Предмет запроса: {{ request.answer_request_id_offer.offer_title }}</h4>
-        <h4>Запрашивает: {{ request.answer_request_id_user }}</h4>
-        <h4>Запрашивает: {{ request.answer_request_comment }}</h4>
+        <h4>Пользователь {{request.answer_request_id_offer__offer_id_user__username}} нуждается в</h4>
+        <h4>товаре {{ request.answer_request_id_offer__offer_title }}. Вы можете одобрить или отклонить его заявку.</h4>
         <h6>Статус: {{ request.answer_request_status }}</h6>
-        <button class="button">Одобрить</button>
+{#        <button class="button">Одобрить</button>#}
+        <form action="/approveoffer/{{ request.id }}/" method="post">
+            {% csrf_token %}
+            <input type="submit" class="button" value="Одобряю">
+        </form>
     {% endfor %}
 </div>
 {% endblock %}

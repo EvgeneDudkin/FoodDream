@@ -5,8 +5,10 @@
     {% for offer in offers %}
         <h6>Дата размещения: {{ offer.offer_date }}</h6>
         <h4>Предмет предложения: {{ offer.offer_title }}</h4>
-        <button class="button">Нуждаюсь</button>
+        <form action="/needoffer/{{ offer.id }}/" method="post">
+            {% csrf_token %}
+            <input type="submit" class="button" value="Нуждаюсь в этом">
+        </form>
     {% endfor %}
-
 </div>
 {% endblock %}
