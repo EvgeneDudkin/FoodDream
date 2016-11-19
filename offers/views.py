@@ -39,7 +39,7 @@ def requests(request):
 def answers(request):
     all_answers = Answer.objects.all()
     return render_to_response('answers.html', {
-        'requests': all_answers,
+        'answers': all_answers,
         'username': auth.get_user(request).username
     })
 #
