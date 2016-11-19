@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% load staticfiles %}
+
+{% block requests %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Заявки</title>
+</head>
+<body>
+    <div class="large-8 columns">
+        {% for request in requests %}
+            <h6>Предмет запроса: {{ request.request_title }}</h6>
+            <h4>Запрашивает покушать: {{ request.request_requester }}</h4>
+            <h4>Предмет запроса: {{ request.request_status }}</h4>
+            <button class="button">Одобрить</button>
+        {% endfor %}
+    </div>
+</body>
+</html>
+{% endblock %}

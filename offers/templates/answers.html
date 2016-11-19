@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% load staticfiles %}
+
+{% block answers %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ответы</title>
+</head>
+<body>
+    <div class="large-8 columns">
+        {% for answer in answers %}
+            <h6>Предмет предложения: {{ answer.answer_title }}</h6>
+            <h4>Статус: {{ answer.answer_status }}</h4>
+            <button class="button">Отменить</button>
+        {% endfor %}
+    </div>
+</body>
+</html>
+{% endblock %}

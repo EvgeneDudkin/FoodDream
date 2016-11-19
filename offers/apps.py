@@ -1,5 +1,5 @@
-# from django.apps import AppConfig
-#
-#
-# class ArticleConfig(AppConfig):
-#     name = 'article'
+from django.apps import AppConfig
+
+
+class ArticleConfig(AppConfig):
+    name = 'offers'

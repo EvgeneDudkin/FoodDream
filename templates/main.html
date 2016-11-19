@@ -9,28 +9,36 @@
     <body>
         <div class="top-bar">
             <section class="top-bar-title">
-                <h1><a href="/">Поделись едой - будь счастлив</a></h1>
+                <h1><a href="/">Поделись едой - открой сердце</a></h1>
             </section>
-            <section class="top-bar-right">
+            <section class="top-bar medium-3 columns">
                 <ul class="right">
-                    {% if username %}
-                        <li class=""><a href="/auth/logout/">Выйти ({{ username }})</a></li>
-                    {% else %}
-                        <li><a href="/auth/login/">Войти</a></li>
-                    {% endif %}
+                    <form>
+                        <ul class="right">
+                            {% if username %}
+                                <a href="/auth/logout/" class="button"
+                                   onMouseOver="this.style.background='#80C242'"
+                                   onMouseOut="this.style.background='#689E36'" style="background-color: #689E36;"> Выйти ({{ username }})</a>
+                            {% else %}
+                                <a href="/auth/login/">Войти</a>
+                            {% endif %}
+                        </ul>
+                    </form>
                 </ul>
             </section>
         </div>
         <div class="sidebar medium-9 large-3 columns">
             <ul class="inline-list right">
-              <li><a href="#">Предложения</a></li>
-              <li><a href="#">Ответы</a></li>
-              <li><a href="#">Мои предложения</a></li>
-              <li><a href="#">Заявки</a></li>
+                <li><a href="/offers/">Предложения</a></li>
+                <li><a href="/answers/">Ответы</a></li>
+                <li><a href="/requests/">Заявки</a></li>
+                <li><a href="#">Мои предложения</a></li>
             </ul>
         </div>
         <div class="row">
             {% block offers %}{% endblock %}
+            {% block answers %}{% endblock %}
+            {% block requests %}{% endblock %}
             {% block login %}{% endblock %}
         </div>
     </body>

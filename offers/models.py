@@ -27,12 +27,4 @@ class Request(models.Model):
     request_title = models.CharField(max_length=200)
     request_requester = models.CharField(max_length=20)
     request_status = models.CharField(max_length=20)
-#
-# class Comments(models.Model):
-#     class Meta:
-#         db_table = "comments"
-#
-#     comments_date = models.DateTimeField(auto_now_add=True)
-#     comments_text = models.TextField(verbose_name='Текст комментария')
-#     comments_article = models.ForeignKey(Article)
-#     comments_from = models.ForeignKey(User)
+

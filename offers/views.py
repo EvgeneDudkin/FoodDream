@@ -5,13 +5,12 @@ from django.template.loader import get_template
 from django.template import Context
 from django.shortcuts import render_to_response
 from django.core.paginator import Paginator
-#
-# from article.forms import CommentForm
+
 from offers.models import *
-# from django.core.exceptions import ObjectDoesNotExist
-# from django.contrib import auth
-#
-#
+from django.core.exceptions import ObjectDoesNotExist
+from django.contrib import auth
+
+
 def basic_one(request):
     view = "basic_one"
     html = "<html><header></header><body>Это %s вьюха</body></html>" % view
@@ -24,7 +23,24 @@ def offers(request):
     return render_to_response('offers.html', {
         # 'offers': all_offers.page(page_number),
         # 'username': auth.get_user(request).username
-        'offers': all_offers
+        'offers': all_offers,
+        'username': auth.get_user(request).username
+    })
+
+
+def requests(request):
+    all_requests = Request.objects.all()
+    return render_to_response('requests.html', {
+        'requests': all_requests,
+        'username': auth.get_user(request).username
+    })
+
+
+def answers(request):
+    all_answers = Answer.objects.all()
+    return render_to_response('answers.html', {
+        'requests': all_answers,
+        'username': auth.get_user(request).username
     })
 #
 #
