@@ -14,7 +14,7 @@
             <section class="top-bar medium-3 columns">
                 <ul class="right">
                     <form>
-                        <ul class="right">
+                        <ul class="right vertical">
                             {% if username %}
                                 <a href="/auth/logout/" class="button"
                                    onMouseOver="this.style.background='#80C242'"
@@ -32,13 +32,14 @@
                 <li><a href="/offers/">Предложения</a></li>
                 <li><a href="/answers/">Ответы</a></li>
                 <li><a href="/requests/">Заявки</a></li>
-                <li><a href="#">Мои предложения</a></li>
+                <li><a href="/my_offers/">Мои предложения</a></li>
             </ul>
         </div>
         <div class="row">
             {% block offers %}{% endblock %}
             {% block answers %}{% endblock %}
             {% block requests %}{% endblock %}
+            {% block my_offers %}{% endblock %}
             {% block login %}{% endblock %}
         </div>
     </body>

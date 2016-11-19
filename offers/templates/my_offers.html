@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% load staticfiles %}
+
+{% block my_offers %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мои предложения</title>
+</head>
+<body>
+    <div class="large-8 columns">
+        {% for my_offer in my_offers %}
+            <h6>Дата размещения: {{ my_offer.my_offers_date }}</h6>
+            <h4>Предмет предложения: {{ my_offer.my_offers_title }}</h4>
+            <h4>Адрес: {{ my_offer.my_offers_address }}</h4>
+            <h4>Рейтинг: {{ my_offer.my_offers_rate }}</h4>
+            <h4>Радиус: {{ my_offer.my_offers_radius }}</h4>
+            <button class="button">Отменить предложение</button>
+        {% endfor %}
+    </div>
+</body>
+</html>
+{% endblock %}

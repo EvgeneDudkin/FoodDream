@@ -1,11 +1,12 @@
 from django.conf.urls import url
 from django.contrib import admin
-from offers.views import basic_one, offers, requests, answers
+from offers.views import basic_one, offers, requests, answers, my_offers
 urlpatterns = [
     url(r'^1/', basic_one),
     url(r'^offers/$', offers),
     url(r'^answers/$', answers),
     url(r'^requests/$', requests),
+    url(r'^my_offers/$', my_offers),
     url(r'^', offers),
     # url(r'^articles/get/(?P<article_id>\d+)/$', article),
     # url(r'^articles/addlike/(?P<article_id>\d+)/$', addlike),

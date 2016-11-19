@@ -28,3 +28,12 @@ class Request(models.Model):
     request_requester = models.CharField(max_length=20)
     request_status = models.CharField(max_length=20)
 
+
+class MyOffers(Offer):
+    class Meta:
+        db_table = "my_offers"
+    my_offers_title = Offer.offer_title
+    my_offers_address = Offer.offer_address
+    my_offers_date = Offer.offer_date
+    my_offers_radius = Offer.offer_radius
+    my_offers_rate = Offer.offer_rate

@@ -42,6 +42,14 @@ def answers(request):
         'answers': all_answers,
         'username': auth.get_user(request).username
     })
+
+
+def my_offers(request):
+    all_my_offers = Answer.objects.all()
+    return render_to_response('my_offers.html', {
+        'answers': all_my_offers,
+        'username': auth.get_user(request).username
+    })
 #
 #
 # def article(request, article_id=1):
