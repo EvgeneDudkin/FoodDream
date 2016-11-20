@@ -1304,7 +1304,7 @@ li {
   font-size: inherit; }
 
 ul {
-  list-style-type: disc;
+  list-style-type: none;
   margin-left: 1.25rem; }
 
 ol {
@@ -4224,3 +4224,33 @@ table.hover tbody tr:nth-of-type(even):hover {
 .long-delay {
   -webkit-animation-delay: 700ms !important;
           animation-delay: 700ms !important; }
+
+#left_side {
+  font-size: 200%;
+}
+
+#left_side li {
+  font-weight: bold;
+}
+
+#my_offers {
+  width: 70%;
+  padding-left: 100px;
+  margin: 0 auto;
+}
+
+#nav {
+  /*border: dashed;*/
+  width: 300px;
+}
+
+#left_side li{
+  border: solid;
+  border-color: #f5f5f5;
+}
+
+#left_side {
+  width: 250px;
+
+}
+
