@@ -1,0 +1,306 @@
+/************************************************************************************
+*
+* General Style
+*
+/************************************************************************************/
+html {
+    height: 100%;
+}
+
+body {
+    height: auto;
+    font-size: 14px;
+    background: #fff url(../../img/profile/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.container a {
+    color: #78beef;
+    text-decoration: none;
+}
+
+.container a:hover {
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -ms-transition: 1s ease;
+    transition: 1s ease;
+    color: #fff;
+}
+
+.container h1 {
+    text-transform: uppercase;
+    margin: 130px 0 10px 0;
+    font-size: 50px;
+    color: #fff;
+    line-height: 50px;
+    letter-spacing: -1px;
+    font-weight: 300;
+}
+
+.container p {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    color: #ddd;
+    margin-bottom: 0;
+}
+
+.container p.small {
+    font-size: 14px;
+    margin: 0;
+}
+
+.container img {
+    border: 4px solid #eee;
+    max-width: 100%;
+}
+
+/************************************************************************************
+*
+* Google Nexus Menu
+*
+/************************************************************************************/
+
+html.cursor {
+    cursor: pointer;
+}
+
+nav {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 59px;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background-color: #ffffff;
+}
+
+nav ul,
+#sideNav ul,
+#sideNav ul ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin: 0;
+    float: left;
+    border-right: 1px solid #ddd;
+    font-size: 18px;
+}
+
+nav a,
+#sideNav a {
+    color: #5b6064;
+    text-decoration: none;
+    display: block;
+    padding: 10px 30px;
+    height: 59px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    line-height: 35px;
+}
+
+nav a:hover,
+#sideNav a:hover {
+    color: #ffffff;
+    background-color: #5b6064;
+}
+
+#sideNav,
+#sideNav.showHalfMenu,
+#sideNav.showFullMenu,
+#sideNav ul ul li,
+#sideNav.showFullMenu ul ul li {
+    -webkit-transition: 0.2s ease;
+    -moz-transition: 0.2s ease;
+    -ms-transition: 0.2s ease;
+    transition: 0.2s ease;
+}
+
+#sideNav {
+    position: fixed;
+    left: -60px;
+    top: 59px;
+    width: 60px;
+    height: 100%;
+    /* 		border-right:1px solid #ddd;						 */
+    background-color: #ffffff;
+    overflow-y: auto;
+}
+
+#sideNav.showHalfMenu {
+    left: 0;
+}
+
+#sideNav.showFullMenu {
+    left: 0;
+    width: 311px;
+}
+
+#sideNav.showFullMenu ul ul li {
+    height: 59px;
+}
+
+#sideNav > ul {
+    width: 100%;
+    padding-bottom: 60px;
+}
+
+#sideNav ul li {
+    width: 100%;
+    margin: 0;
+    font-weight: 300;
+}
+
+#sideNav ul li a {
+    border-bottom: 1px solid #ddd;
+    padding-left: 70px;
+}
+
+#sideNav ul li span {
+    position: relative;
+    top: 3px;
+}
+
+#sideNav ul ul li {
+    overflow: hidden;
+    height: 0;
+}
+
+#sideNav iicon-active-offers {
+    font-family: 'Roboto', sans-serif;
+    border: 0;
+    outline: 0;
+    font-weight: 300;
+    background: transparent;
+    color: #5b6064;
+}
+
+iicon-active-offers::-webkit-input-placeholder {
+    color: #5b6064;
+}
+
+iicon-active-offers:-moz-placeholder {
+    color: #5b6064;
+}
+
+iicon-active-offers::-moz-placeholder {
+    color: #5b6064;
+}
+
+iicon-active-offers:-ms-input-placeholder {
+    color: #5b6064;
+}
+
+#sideNaicon-active-offersForm:hover iicon-active-offers:focus,
+#sideNaicon-active-offersForm:hover iicon-active-offers::-webkit-input-placeholder {
+    color: #fff;
+}
+
+#sideNaicon-active-offersForm:hover iicon-active-offers:-moz-placeholder {
+    color: #fff;
+}
+
+#sideNaicon-active-offersForm:hover iicon-active-offers::-moz-placeholder {
+    color: #fff;
+}
+
+/************************************************************************************
+*
+* Menu Icons
+*
+/************************************************************************************/
+
+.icon {
+    background: transparent url('../../img/profile/icons.png') no-repeat 0 0;
+}
+
+.icon-menu {
+    text-indent: -99999em;
+    background-position: 0 0;
+}
+
+.icon-menu:hover {
+    background-position: -59px 0;
+}
+
+.icon-menu.icon-menu-active {
+    background-position: -120px 0;
+    background-color: #fff;
+}
+
+.icon-active-offers {
+    background-position: 0 -60px;
+}
+
+.icon-active-offers:hover {
+    background-position: -59px -60px;
+}
+
+.icon-answers {
+    background-position: 0 -120px;
+}
+
+.icon-answers:hover {
+    background-position: -58px -120px;
+}
+
+.icon-doc {
+    background-position: 0 -180px;
+}
+
+.icon-doc:hover {
+    background-position: -58px -180px;
+}
+
+.icon-my-offers {
+    background-position: 0 -240px;
+}
+
+.icon-my-offers:hover {
+    background-position: -58px -240px;
+}
+
+/************************************************************************************
+*
+* Responsive
+*
+/************************************************************************************/
+
+/*------------------------------------------------------------------*/
+/*	2) Note: Design for a width of 480 px
+/*------------------------------------------------------------------*/
+@media only screen and (min-width: 200px) and (max-width: 480px) {
+
+    nav a,
+    #sideNav a {
+        padding: 10px 15px;
+    }
+
+    nav a#btn-menu {
+        padding: 10px 30px;
+    }
+
+    #sideNav.showFullMenu,
+    #sideNav.showFullMenu li,
+    #sideNav.showFullMenu a {
+        width: 100%;
+    }
+
+}
+

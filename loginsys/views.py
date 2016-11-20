@@ -27,18 +27,32 @@ def logout(request):
     return redirect('/')
 
 
-def register(request):
-    args = {}
-    args.update(csrf(request))
-    args['form'] = UserCreationForm
-    if request.POST:
-        newuser_form = UserCreationForm(request.POST)
-        if newuser_form.is_valid():
-            newuser_form.save()
-            newuser = auth.authenticate(username=newuser_form.cleaned_data['username'],
-                                        password=newuser_form.cleaned_data['password'])
+# def register(request):
+#     args = {}
+#     args.update(csrf(request))
+#     args['form'] = UserCreationForm
+#     if request.POST:
+#         newuser_form = UserCreationForm(request.POST)
+#         if newuser_form.is_valid():
+#             newuser_form.save()
+#             newuser = auth.authenticate(username=newuser_form.cleaned_data['username'],
+#                                         password=newuser_form.cleaned_data['password'])
+#
+#             return redirect('/')
+#         else:
+#             args['form'] = newuser_form
+#     return render_to_response('register.html', args)
 
-            return redirect('/')
-        else:
-            args['form'] = newuser_form
-    return render_to_response('register.html', args)
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/')
+    else:
+        form = UserCreationForm()
+    token = {}
+    token.update(csrf(request))
+    token['form'] = form
+    return render_to_response('register.html', token)

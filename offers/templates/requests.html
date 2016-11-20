@@ -3,15 +3,16 @@
 {% block requests %}
 <div class="large-8 columns">
     {% for request in requests %}
-        <h4>Пользователь {{request.answer_request_id_offer__offer_id_user__username}} нуждается в</h4>
-        <h4>товаре {{ request.answer_request_id_offer__offer_title }}. Вы можете одобрить или отклонить его заявку.</h4>
-        <h6>Статус: {{ request.answer_request_status }}</h6>
-{#        <button class="button">Одобрить</button>#}
-        <p>{{ request }}</p>
-        <form action="/approveoffer/{{ request.id }}/" method="post">
-{#            {% csrf_token %}#}
+        <h4 align="center">Пользователь {{request.answer_request_id_user__username}} нуждается в
+            товаре {{ request.answer_request_id_offer__offer_title }}. Вы можете одобрить или отклонить его заявку.</h4>
+        <h6 align="center" >Статус: {{ request.answer_request_status }}</h6>
+        <div align="center">
+            <form action="/approveoffer/{{ request.id }}/" method="post">
+            {% csrf_token %}
             <input type="submit" class="button" value="Одобряю">
         </form>
+        </div>
+
     {% endfor %}
 </div>
 {% endblock %}

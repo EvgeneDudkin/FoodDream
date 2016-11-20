@@ -1,13 +1,10 @@
 {% extends 'main.html' %}
 {% load staticfiles %}
-
 {% block answers %}
-<div class="large-8 columns">
+<div class="large-8 columns" align="center">
     {% for answer in answers %}
         <h4>Предмет запроса: {{ answer.answer_request_id_offer.offer_title }}</h4>
-        <h6>Статус: {{ answer.answer_request_status }}</h6>
-{#        <button class="button">Нуждаюсь</button>#}
+        <h6>Адрес: {{ answer.answer_request_id_offer.offer_address }}</h6>
     {% endfor %}
-
 </div>
 {% endblock %}

@@ -7,11 +7,11 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/foundation.css' %}">
     </head>
     <body>
-        <div class="top-bar">
+        <div class="top-bar" align="center">
             <section class="top-bar-title">
                 <h1><a href="/">Поделись едой - будь счастлив</a></h1>
             </section>
-            <section class="top-bar medium-3 columns">
+            <section class="top-bar medium-2 columns" id="loginout">
                 <ul class="right">
                     <form>
                         {% csrf_token %}
@@ -28,22 +28,27 @@
                 </ul>
             </section>
         </div>
-        <div class="sidebar medium-3 large-3 columns">
-            {% csrf_token %}
-            <ul class="inline-list right">
-                <li><a href="/offers/">Активные предложения</a></li>
-                <li><a href="/answers/">Ответы</a></li>
-                <li><a href="/requests/">Заявки</a></li>
-                <li><a href="/my_offers/">Мои предложения</a></li>
-            </ul>
-        </div>
-        <div class="row">
-            {% csrf_token %}
-            {% block offers %}{% endblock %}
-            {% block answers %}{% endblock %}
-            {% block requests %}{% endblock %}
-            {% block my_offers %}{% endblock %}
-            {% block login %}{% endblock %}
+        <div id="container" align="center">
+             <div id="nav" class="sidebar medium-2 large-2 columns">
+                {% csrf_token %}
+                <ul class="inline-list right">
+                    <li><a href="/offers/">Активные предложения</a></li>
+                    <li><a href="/answers/">Ответы</a></li>
+                    <li><a href="/requests/">Заявки</a></li>
+                    <li><a href="/my_offers/">Мои предложения</a></li>
+                </ul>
+             </div>
+
+             <div id="content">
+                    {% csrf_token %}
+                    {% block offers %}{% endblock %}
+                    {% block answers %}{% endblock %}
+                    {% block requests %}{% endblock %}
+                 <div align="center">
+                     {% block my_offers %}{% endblock %}
+                 </div>
+                    {% block login %}{% endblock %}
+             </div>
         </div>
     </body>
 </html>

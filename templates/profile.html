@@ -1,0 +1,76 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale = 1.0">
+    <meta name="description"
+          content=""/>
+    <title>Сделаем зиму теплее</title>
+    <!-- CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../static/css/profile/normalize.css"/>
+    <link rel="stylesheet" href="../static/css/profile/main.css"/>
+    <link rel="stylesheet" href="../static/css/profile/wind.css">
+
+    <!-- Script -->
+    <script type="text/javascript" src="../static/js/profile/jquery.1.10.2.min.js"></script>
+    <script type="text/javascript" src="../static/js/profile/gnmenu.js"></script>
+    <script type="text/javascript" src="http://www.queness.com/js/bsa.js"></script>
+    <script type="text/javascript" src="../static/js/profile/activeBar.js"></script>
+</head>
+
+<body>
+
+    <!-- HTML Markup for Top Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#" class="icon icon-menu" id="btn-menu">Menu</a></li>
+            <!--<li><a href="http://www.queness.com">Queness</a></li>-->
+            <!--<li><a href="http://www.queness.com/post/14666/recreate-google-nexus-menu">Read Tutorial</a></li>-->
+        </ul>
+    </nav>
+
+    <div id="overlay"></div>
+
+    <div id="activeOffers">
+
+    </div>
+
+    <div id="answers">
+
+    </div>
+
+    <div id="requests">
+
+    </div>
+
+    <div id="myOffers">
+
+    </div>
+
+
+    <!-- HTML Markup for Sidebar Slide Out Menu -->
+    <div id="sideNav">
+        {% csrf_token %}
+        <ul>
+            <li><a href="/offers/" class="icon icon-active-offers"><span>Активные предложения</span></a></li>
+            <li><a href="/answers/" class="icon icon-answers"><span>Ответы</span></a></li>
+            <li><a href="/requests/" class="icon icon-doc"><span>Заявки</span></a></li>
+            <li><a href="/my_offers/" class="icon icon-my-offers"><span>Мои предложения</span></a></li>
+            <li><a href="/logout/"><span>Выход</span></a></li>
+        </ul>
+    </div>
+
+        <div class="row">
+            {% csrf_token %}
+            {% block offers %}{% endblock %}
+            {% block answers %}{% endblock %}
+            {% block requests %}{% endblock %}
+            {% block my_offers %}{% endblock %}
+            {% block login %}{% endblock %}
+        </div>
+
+</body>
+</html>

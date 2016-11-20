@@ -1,0 +1,260 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Поделись едой</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../static/css/main/modal_form.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="../static/css/main/material.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="../static/css/main/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+</head>
+
+<body>
+
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center teal-text text-lighten-2">Еда</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                </div>
+                <div class="row center">
+                    <a href="/auth/login/" id="authorization" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+                </div>
+                <br><br>
+
+            </div>
+        </div>
+        <div class="parallax"><img src="../static/img/main/background1.jpg" alt="Unsplashed background img 1"></div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+                        <h5 class="center">Speeds up development</h5>
+
+                        <p class="light">We did most of the heavy lifting for you to provide a default stylings that
+                            incorporate our custom components. Additionally, we refined animations and transitions to
+                            provide a smoother experience for developers.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+                        <h5 class="center">User Experience Focused</h5>
+
+                        <p class="light">By utilizing elements and principles of Material Design, we were able to create a
+                            framework that incorporates components and animations that provide more feedback to users.
+                            Additionally, a single underlying responsive system across all platforms allow for a more
+                            unified user experience.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+                        <h5 class="center">Easy to work with</h5>
+
+                        <p class="light">We have provided detailed documentation as well as specific code examples to help
+                            new users get started. We are also always open to feedback and can answer any questions a user
+                            may have about Materialize.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="../static/img/main/background2.jpg" alt="Unsplashed background img 2"></div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+
+            <div class="row">
+                <div class="col s12 center">
+                    <h3><i class="mdi-content-send brown-text"></i></h3>
+                    <h4>Contact Us</h4>
+                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque
+                        id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut
+                        ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem
+                        neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu
+                        mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum
+                        ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum
+                        primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="../static/img/main/background3.jpg" alt="Unsplashed background img 3"></div>
+    </div>
+
+    {% block login %}{% endblock %}
+{#    <div id="modal_form"><!-- Сaмo oкнo -->#}
+{#        <span id="modal_close">X</span> <!-- Кнoпкa зaкрыть -->#}
+{#        <div id="container_demo">#}
+{#            <!-- спрятанный якорь, чтобы избежать прыжков http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->#}
+{#            <a class="hiddenanchor" id="tosubscribe"></a>#}
+{#            <a class="hiddenanchor" id="tologin"></a>#}
+{#            <div id="wrapper">#}
+
+{#                <div id="login" class="animate form">#}
+{#                    <form action="/auth/login/" autocomplete="on" method="post">#}
+{#                        {% csrf_token %}#}
+{#                        <h1>Log in</h1>#}
+{#                        <p>#}
+{#                            <label for="username" class="uname" data-icon="u"> Your email or username </label>#}
+{#                            <input id="username" name="username" required="required" type="text"#}
+{#                                   placeholder="Email"/>#}
+{#                        </p>#}
+{##}
+{#                        <p>#}
+{#                            <label for="password" class="youpasswd" data-icon="p"> Your password </label>#}
+{#                            <input id="password" name="password" required="required" type="password"#}
+{#                                   placeholder="Passwords"/>#}
+{#                        </p>#}
+{##}
+{#                        <p class="keeplogin">#}
+{#                            <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping"/>#}
+{#                            <label for="loginkeeping">Keep me logged in</label>#}
+{#                        </p>#}
+{##}
+{#                        <p class="login button">#}
+{#                            <input type="submit" value="Login"/>#}
+{#                        </p>#}
+{##}
+{#                        <p class="change_link">#}
+{#                            Not a member yet ?#}
+{#                            <a href="#tosubscribe" class="to_subscribe">Join us</a>#}
+{#                        </p>#}
+{#                    </form>#}
+{#                </div>#}
+
+{#                <div id="subscribe" class="animate form">#}
+{#                    <form action="profile.html" autocomplete="on">#}
+{#                        <h1> Sign up </h1>#}
+{#                        <p>#}
+{#                            <label for="usernamesignup" class="uname" data-icon="u">Your username</label>#}
+{#                            <input id="usernamesignup" name="usernamesignup" required="required" type="text"#}
+{#                                   placeholder="Email"/>#}
+{#                        </p>#}
+{#                        <p>#}
+{#                            <label for="emailsignup" class="youmail" data-icon="e"> Your email</label>#}
+{#                            <input id="emailsignup" name="emailsignup" required="required" type="text"#}
+{#                                   placeholder="Email"/>#}
+{#                        </p>#}
+{#                        <p>#}
+{#                            <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>#}
+{#                            <input id="passwordsignup" name="passwordsignup" required="required" type="password"#}
+{#                                   placeholder="Passwords"/>#}
+{#                        </p>#}
+{#                        <p>#}
+{#                            <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your#}
+{#                                password </label>#}
+{#                            <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required"#}
+{#                                   type="password" placeholder="Passwords"/>#}
+{#                        </p>#}
+{#                        <p class="signin button">#}
+{#                            <input type="submit" value="Sign up"/>#}
+{#                        </p>#}
+{#                                            <p class="change_link">#}
+{#                                                Already a member ?#}
+{#                                                <a href="#tologin" class="to_subscribe"> Go and log in </a>#}
+{#                                            </p>#}
+{#                    </form>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+
+        <!-- Тут любoе сoдержимoе -->
+
+{#    </div>#}
+
+    <div id="overlay"></div><!-- Пoдлoжкa -->
+
+    <footer class="page-footer teal">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">FoodSharing</h5>
+                    <p class="grey-text text-lighten-4">We are team "repozzitoro".</p>
+
+
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Settings</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../static/js/main/login_form.js"></script>
+    <script src="../static/js/main/materialize.js"></script>
+    <script src="../static/js/main/init.js"></script>
+
+</body>
+</html>

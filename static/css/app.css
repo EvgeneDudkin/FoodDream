@@ -1,0 +1,20 @@
+.container {
+ width: 600px; /* Ширина макета */
+ margin: 0 auto; /* Выравнивание по центру */
+}
+.nav {
+ width: 200px; /* Ширина левой колонки */
+ float: left;
+}
+.aside {
+ width: 300px; /* Ширина правой колонки */
+ float: right;
+}
+.content {
+ margin: 0 300px 0 200px; /* Отступ на ширину левой и правой колонки*/
+}
+
+#loginout {
+    padding: 30px;
+
+}

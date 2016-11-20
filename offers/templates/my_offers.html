@@ -1,16 +1,11 @@
 {% extends 'main.html' %}
 {% load staticfiles %}
-
 {% block my_offers %}
-<div class="large-8 columns">
-
+<div class="large-5 columns" align="center">
     {% for my_offer in my_offers %}
         <h6>Дата размещения: {{ my_offer.offer_date }}</h6>
         <h4>Предмет предложения: {{ my_offer.offer_title }}</h4>
         <h4>Адрес: {{ my_offer.offer_address }}</h4>
-{#        <h4>Рейтинг: {{ my_offer.off }}</h4>#}
-{#        <h4>Радиус: {{ my_offer.off}}</h4>#}
-{#        <button class="button">Отменить предложение</button>#}
          <form action="/deloffer/{{ my_offer.id }}/" method="post">
             {% csrf_token %}
             <input type="submit" class="button" value="Отменить предложение">
@@ -18,9 +13,9 @@
     {% endfor %}
     <form action="/addoffer/" method="post">
         {% csrf_token %}
-        <p><label for="offer_title">Title:</label>
+        <p align="left"><label for="offer_title">Title:</label>
             <input type="text" name="offer_title"></p>
-        <p><label for="offer_title">Address:</label>
+        <p align="left"><label for="offer_title">Address:</label>
             <input type="text" name="offer_address"></p>
         <input type="submit" class="button" value="Создать предложение">
     </form>
