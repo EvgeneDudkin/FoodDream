@@ -142,21 +142,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
 
-# @method_decorator(csrf_exempt, name='dispatch')
-# def approveoffer(request, request_id):
-#     form = AnsReqForm(request.POST)
-#     if form.is_valid():
-#         record = AnswerRequest.object.get(id=request_id)
-#         record.answer_request_status = 1
-#         record.save()
-#         # form = AnswerRequest(answer_request_id_user=User(user_active_id),
-#         #                      answer_request_id_offer=Offer(offer_id),
-#         #                      answer_request_status=status,
-#         #                      )
-#         # form.save()
-
-    # return render(request, 'offers.html')
-
 @csrf_exempt
 def approveoffer(request, request_id):
     # print(request_id)
@@ -176,3 +161,19 @@ def approveoffer(request, request_id):
     record.answer_request_status = status
     record.save()
     return render(request, 'offers.html',  {'form': form})
+
+
+# @method_decorator(csrf_exempt, name='dispatch')
+# def approveoffer(request, request_id):
+#     form = AnsReqForm(request.POST)
+#     if form.is_valid():
+#         record = AnswerRequest.object.get(id=request_id)
+#         record.answer_request_status = 1
+#         record.save()
+#         # form = AnswerRequest(answer_request_id_user=User(user_active_id),
+#         #                      answer_request_id_offer=Offer(offer_id),
+#         #                      answer_request_status=status,
+#         #                      )
+#         # form.save()
+
+    # return render(request, 'offers.html')

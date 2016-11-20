@@ -1,10 +1,13 @@
+from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.forms import forms
 
 
 class User(AbstractUser):
-    class Meta:
+    class Meta(UserCreationForm.Meta):
         swappable = 'AUTH_USER_MODEL'
         db_table = "user"
     user_address = models.TextField()

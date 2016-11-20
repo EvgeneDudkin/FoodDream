@@ -1,4 +1,5 @@
 from django.contrib import auth
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, render_to_response
 from django.template.context_processors import csrf
 from django.contrib.auth.forms import UserCreationForm
