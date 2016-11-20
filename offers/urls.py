@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^addoffer/$', addoffer),
     url(r'^deloffer/(?P<offer_id>\d+)/$', deloffer),
     url(r'^needoffer/(?P<offer_id>\d+)/$', needoffer),
-    url(r'^approveoffer/(?P<offer_id>\d+)/$', approveoffer),
+    url(r'^approveoffer/(?P<request_id>\d+)/$', approveoffer),
     url(r'^', offers),
     # url(r'^offers/get/(?P<article_id>\d+)/$', offers),
     # url(r'^articles/addlike/(?P<article_id>\d+)/$', addlike),

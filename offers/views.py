@@ -14,7 +14,7 @@ from offers.forms import OfferForm, AnsReqForm
 from offers.models import *
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import auth
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
 
 def basic_one(request):
@@ -36,7 +36,7 @@ def requests(request):
         .select_related('answer_request_id_offer__offer_id_user__user_username')
     values = all_requests.values('answer_request_id_offer__offer_id_user__username',
                                  'answer_request_id_offer__offer_title',
-                                 'answer_request_status')
+                                 'answer_request_status', 'id')
     # print(values)
     return render_to_response('requests.html', {
         'requests': values,
@@ -137,17 +137,42 @@ def needoffer(request, offer_id):
 
     return render(request, 'offers.html', {'form': form})
 
+
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+
+
+# @method_decorator(csrf_exempt, name='dispatch')
+# def approveoffer(request, request_id):
+#     form = AnsReqForm(request.POST)
+#     if form.is_valid():
+#         record = AnswerRequest.object.get(id=request_id)
+#         record.answer_request_status = 1
+#         record.save()
+#         # form = AnswerRequest(answer_request_id_user=User(user_active_id),
+#         #                      answer_request_id_offer=Offer(offer_id),
+#         #                      answer_request_status=status,
+#         #                      )
+#         # form.save()
+
+    # return render(request, 'offers.html')
+
 @csrf_exempt
-def approveoffer(request, offer_id):
-    print('-----------------------', offer_id)
-    # form = AnsReqForm(request.POST)
+def approveoffer(request, request_id):
+    # print(request_id)
+    form = AnsReqForm(request.POST)
     # if form.is_valid():
     user_active_id = auth.get_user(request).id
-    # offer2_id = Offer.objects.get(id=offer_id).id
+    user_b = AnswerRequest.objects.get(id=request_id).answer_request_id_user
+    # offer2_id = Offer.objects.get(id=request_id).id
     status = 1
-    AnswerRequest.objects.update(answer_request_id_user=User(user_active_id),
-                                        answer_request_id_offer=Offer(offer_id),
-                                        answer_request_status=status)
-        # form.save()
-
-    return render(request, 'offers.html')
+    # AnswerRequest.objects.update(
+    #         # answer_request_id_user=User(user_active_id),
+    #         # answer_request_id_offer=Offer(offer_id),
+    #         id=request_id,
+    #         answer_request_status=status
+    #     )
+    record = AnswerRequest.objects.get(id= request_id)
+    record.answer_request_status = status
+    record.save()
+    return render(request, 'offers.html',  {'form': form})

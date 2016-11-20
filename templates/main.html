@@ -14,6 +14,7 @@
             <section class="top-bar medium-3 columns">
                 <ul class="right">
                     <form>
+                        {% csrf_token %}
                         <ul class="right vertical">
                             {% if username %}
                                 <a href="/auth/logout/" class="button"
@@ -28,6 +29,7 @@
             </section>
         </div>
         <div class="sidebar medium-3 large-3 columns">
+            {% csrf_token %}
             <ul class="inline-list right">
                 <li><a href="/offers/">Активные предложения</a></li>
                 <li><a href="/answers/">Ответы</a></li>
@@ -36,6 +38,7 @@
             </ul>
         </div>
         <div class="row">
+            {% csrf_token %}
             {% block offers %}{% endblock %}
             {% block answers %}{% endblock %}
             {% block requests %}{% endblock %}
